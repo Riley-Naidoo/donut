@@ -1,0 +1,22 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black; /* Optional: To make the donut more visible */
+  color: white; /* Optional: To make the donut more visible */
+}
+
+#canvas-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#canvas {
+  font-family: monospace;
+  line-height: 1;
+}
