@@ -4,11 +4,11 @@ function donut() {
     const canvasWidth = 80;
     const canvasHeight = 24;
     const canvasArea = canvasHeight * canvasWidth;
-    const yOffset = 12;
-    const xOffset = 40;
+    const yOffset = canvasHeight / 2;
+    const xOffset = canvasWidth / 2;  
     const innerRadius = 2;
-    const r1Points = 90;
-    const r2Points = 314; 
+    const r1Points = 90; 
+    const r2Points = 314;
     const fov = 5;
   
     const what = 30;
@@ -17,12 +17,12 @@ function donut() {
     let B = 0;
   
     let shades = '.,-~:;=!*#$@'.split('');
-  
+
     let b, z;
   
     let interval = setInterval(() => {
       b = Array(canvasArea).fill(' '); 
-      z = Array(7040).fill(0);
+      z = Array(7040).fill(0); 
   
       for (let j = 0; j < 6.28; j += 6.28 / r1Points) {
         for (let i = 0; i < 6.28; i += 6.28 / r2Points) {
@@ -41,7 +41,6 @@ function donut() {
           let n = Math.sin(B);
           let t = c * h * g - f * e;
   
-          
           let x = (xOffset + what * D * (l * h * m - t * n)) << 0;
           let y = (yOffset + (what / 2) * D * (l * h * n + t * m)) << 0;
           let o = (x + canvasWidth * y) << 0;
@@ -68,10 +67,10 @@ function donut() {
           canvas.innerHTML += line.join('') + '<br />';
           line = [];
         }
-  
-        A += 0.00001; 
-        B += 0.000005; 
       }
+  
+      A += 0.04;
+      B += 0.02;
     }, 17);
   }
   
